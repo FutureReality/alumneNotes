@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class GestorNotes {
+    private String nomAlumne;
+    private double[] notes;
+
+    public GestorNotes(String nomAlumne, double[] notes) {
+        this.nomAlumne = nomAlumne;
+        this.notes = notes;
+    }
+
+    public void registrarNotes() {
+        Scanner myObj = new Scanner(System.in);
+        System.out.println("Escribe el nombre del alumno:");
+        nomAlumne = myObj.nextLine();
+
+        System.out.println("Escribe la nota del alumno:");
+        double nota = myObj.nextDouble();
+
+        System.out.println("Nombre del alumno: " + nomAlumne);
+        System.out.println("Nota del alumno: " + nota);
+    }
+
+    public static void main(String[] args) {
+        double[] notas = new double[3];
+        GestorNotes gestor = new GestorNotes("", notas);
+        gestor.registrarNotes();
+    }
+}
